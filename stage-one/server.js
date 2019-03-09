@@ -17,6 +17,6 @@ app.get('/api/todos', (req, res) => {
 // constants that are used as config variables can be ALLCAPS-ed
 const PORT = 3000;
 // makes the server start listening for requests.
-app.listen(PORT, () => { // optional callback that alerts the person who started the server that it's ready.
-  console.log(`We Have Liftoff on port ${PORT}🚀`)
+app.listen(PORT, () => { // optional callback
+  console.log(`We Have Liftoff on port ${PORT}🚀`); // alerts the person who started the server that it's ready.
 });
