@@ -1,9 +1,13 @@
 // require('express') adds the default export from the express package to our code as "express"
 const express = require('express');
+// requiring body-parser to make the request body accessible
+const bodyParser = require('body-parser');
 // to use express, you've got to instantiate it
 const app = express();
 // db here until we get into MongoDB
 const db = require('./dummy-db');
+//app.use allows the app to use a specified middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 // "GET" route that gets all the todos in our dummy JS database
 // first argument is a 'route' string, second is a callback with Request & Response
 app.get('/api/todos', (req, res) => {
