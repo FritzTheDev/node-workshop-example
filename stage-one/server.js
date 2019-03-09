@@ -7,6 +7,8 @@ const db = require('./dummy-db');
 // "GET" route that gets all the todos in our dummy JS database
 // first argument is a 'route' string, second is a callback with Request & Response
 app.get('/api/todos', (req, res) => {
+  // optional: works as a logger that announces when routes are hit and at what time.
+  console.log('GET ' + req.route.path + ' ' + new Date().toISOString());
   // response status
   res.status(200).send({
     success: 'true', // alerts the client app that the request suceeded
