@@ -22,6 +22,8 @@ app.get('/api/todos', (req, res) => {
 });
 // post route to add data
 app.post('/api/todos', (req, res) => {
+  // optional: works as a logger that announces when routes are hit and at what time.
+  console.log('POST ' + req.route.path + ' ' + new Date().toISOString());
   // interrupts the function to respond with status 400 if no title
   if (!req.body.title) {
     // 4xx is the "Problem with a request" error code
